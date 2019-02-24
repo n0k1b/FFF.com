@@ -118,7 +118,7 @@ public class Registration extends AppCompatActivity {
             ActivityCompat.requestPermissions(Registration.this, new String[]{Manifest.permission.RECEIVE_SMS}, REQUEST_CODE_ASK_PERMISSIONS);
         } else {
 
-            Toast.makeText(Registration.this, "Contact Permission is already granted", Toast.LENGTH_LONG).show();
+            //Toast.makeText(Registration.this, "Contact Permission is already granted", Toast.LENGTH_LONG).show();
         }
         return true;
     }
