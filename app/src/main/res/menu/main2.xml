@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="50"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/job_post"
+        android:orderInCategory="100"
+        android:actionLayout="@layout/manu_item_jobpost"
+        app:showAsAction="always"
+        android:title="Job Post" />
+    <item
+        android:id="@+id/gig"
+        android:orderInCategory="50"
+        android:icon="@drawable/ic_gig"
+        android:title="Gig"
+        app:showAsAction="always|withText" />
+</menu>

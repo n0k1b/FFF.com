@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:id="@+id/net_layout">
+
+    <TextView
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+
+        android:textColor="#66585757"
+        android:text="Please check your internet connection\n or try again later "/>
+
+    <android.support.v7.widget.CardView
+        android:layout_marginTop="25dp"
+        android:id="@+id/net_conn"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardCornerRadius="2dp"
+        app:cardElevation="2dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusable="true">
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Try again"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:textAllCaps="false"/>
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>

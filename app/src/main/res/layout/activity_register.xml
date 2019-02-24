@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginRegisterPanel.RegisterActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:padding="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_marginTop="15dp"
+                android:textSize="23sp"
+                android:id="@+id/signuptext"
+                android:text="Sign up"
+                android:textColor="@color/dark_gold"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginTop="4dp"
+                android:textSize="13sp"
+                android:layout_below="@+id/signuptext"
+                android:id="@+id/hellootext"
+                android:text="Already have an account?     "
+                android:textColor="#A9A9A9"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginTop="4dp"
+                android:textSize="15sp"
+                android:textColor="@color/dark_gold"
+                android:layout_below="@+id/signuptext"
+                android:layout_toRightOf="@id/hellootext"
+                android:id="@+id/login_txt_btn"
+                android:text="LOGIN"
+                android:fontFamily="sans-serif-condensed"
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+
+
+            <LinearLayout
+                android:id="@+id/reg_layout"
+                android:visibility="gone"
+                android:layout_below="@id/login_txt_btn"
+                android:layout_marginTop="25dp"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+
+                <android.support.design.widget.TextInputLayout
+                    android:textColorHint="@color/dark_gold"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:textColor="@color/dark_gold"
+                        android:textColorHint="@color/dark_gold"
+                        android:textCursorDrawable="@color/dark_gold"
+                        android:backgroundTint="@color/dark_gold"
+                        android:id="@+id/register_username"
+                        android:drawableLeft="@drawable/ic_username"
+                        android:layout_width="match_parent"
+                        android:hint="    Name"
+                        android:inputType="text"
+                        android:textSize="14sp"
+                        android:keyboardNavigationCluster="true"
+                        android:fontFamily="sans-serif-condensed"
+                        android:layout_height="wrap_content" />
+
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:textColorHint="@color/dark_gold"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:textColor="@color/dark_gold"
+                        android:textColorHint="@color/dark_gold"
+                        android:textCursorDrawable="@color/dark_gold"
+                        android:backgroundTint="@color/dark_gold"
+                        android:id="@+id/register_mobile"
+                        android:drawableLeft="@drawable/ic_phone"
+                        android:layout_width="match_parent"
+                        android:hint="     Mobile"
+                        android:textSize="14sp"
+                        android:maxLength="11"
+                        android:inputType="phone"
+                        android:fontFamily="sans-serif-condensed"
+                        android:layout_height="wrap_content" />
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:textColorHint="@color/dark_gold"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:textColor="@color/dark_gold"
+                        android:textColorHint="@color/dark_gold"
+                        android:textCursorDrawable="@color/dark_gold"
+                        android:backgroundTint="@color/dark_gold"
+                        android:id="@+id/register_pass"
+                        android:drawableLeft="@drawable/ic_pass"
+                        android:layout_width="match_parent"
+                        android:hint="     Password"
+                        android:textSize="14sp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:inputType="textPassword"
+                        android:layout_height="wrap_content" />
+
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:textColorHint="@color/dark_gold"
+                    android:layout_marginTop="8dp"
+                    app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:textColor="@color/dark_gold"
+                        android:textColorHint="@color/dark_gold"
+                        android:textCursorDrawable="@color/dark_gold"
+                        android:backgroundTint="@color/dark_gold"
+                        android:id="@+id/register_con_pass"
+                        android:drawableLeft="@drawable/ic_pass"
+                        android:layout_width="match_parent"
+                        android:hint="    Confirm Password"
+                        android:textSize="14sp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:inputType="textPassword"
+                        android:layout_height="wrap_content" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <Button
+                    android:id="@+id/register_button"
+                    android:text="Register"
+                    android:padding="8dp"
+                    android:background="@drawable/oval_filled"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:layout_width="180dp"
+                    android:layout_height="40dp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/numb"
+        android:text="VERIfy your number"
+        android:layout_margin="20dp"
+        android:layout_centerVertical="true"
+        android:background="@color/dark_gold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

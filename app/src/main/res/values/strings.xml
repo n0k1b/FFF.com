@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">FFF.com</string>
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Daily Workout</string>
+    <string name="slide_1_desc">Set your daily workout routine by the help of trainer</string>
+
+    <string name="slide_2_title">Looking to hire faster and more affordably? </string>
+    <string name="slide_2_desc">Learn about the different meditation techniques and practice them</string>
+
+    <string name="slide_3_title">Diet Chart</string>
+    <string name="slide_3_desc">Make your diet chart by the help of health experts</string>
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
+
+
+    <string name="popular"> Popular Catagories</string>
+    <string name="top_rated"> Top Rated Catagories</string>
+    <string name="title_activity_main2">Home</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+
+    <string name="uploadImages">Set your image</string>
+    <string name="msg_loading">Loading...</string>
+
+    <!--Facebook OTP   -->
+    <string name="facebook_app_id">342316913041091</string>
+    <string name="facebook_login_protocol_name">7cd4af971c69295f762a11e2418b7d6d</string>
+
+
+    <string name="fb_app_id">342316913041091</string>
+    <string name="account_kit_client_token">7cd4af971c69295f762a11e2418b7d6d</string>
+    <string name="ak_login_protocol_scheme">ak7cd4af971c69295f762a11e2418b7d6d</string>
+
+</resources>
