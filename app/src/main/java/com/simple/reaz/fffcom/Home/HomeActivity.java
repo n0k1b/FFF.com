@@ -44,7 +44,7 @@ import retrofit2.Response;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     List<ModelCategories> cat_list = new ArrayList<>();
-    RecyclerView firstRecyclerView, secondRecyclerView;
+    RecyclerView firstRecyclerView, secondRecyclerView,thirdRecyclerView;
     private PreferenceManager prefManager;
     ProgressDialog progressDoalog;
     SwipeRefreshLayout swipeRefreshLayout;
@@ -79,6 +79,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         firstRecyclerView = findViewById(R.id.first_recycler_view);
         secondRecyclerView = findViewById(R.id.second_recycler_view);
+        thirdRecyclerView = findViewById(R.id.third_recycler_view);
         swipeRefreshLayout = findViewById(R.id.swipeRefresh);
 
         homeLayout = findViewById(R.id.homeLayout);
