@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.CardView;
@@ -34,8 +33,7 @@ import com.simple.reaz.fffcom.JobPost.Model_Jobpost;
 import com.simple.reaz.fffcom.OnboardingScreen.PreferenceManager;
 import com.simple.reaz.fffcom.OnboardingScreen.WelcomeActivity;
 import com.simple.reaz.fffcom.R;
-import com.simple.reaz.fffcom.SeeAll;
-import com.takusemba.multisnaprecyclerview.MultiSnapRecyclerView;
+import com.simple.reaz.fffcom.SeeAll.SeeAll;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -160,6 +158,22 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent);
             }
         });
+        see_popular.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(HomeActivity.this, SeeAll.class);
+                intent.putExtra("category", (Serializable) cat_list);
+                startActivity(intent);
+            }
+        });
+//        see_available.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent=new Intent(HomeActivity.this, SeeAll.class);
+//                intent.putExtra("category", (Serializable) job_list);
+//                startActivity(intent);
+//            }
+//        });
 
 
 
