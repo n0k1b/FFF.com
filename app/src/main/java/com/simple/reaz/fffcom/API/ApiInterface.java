@@ -24,13 +24,16 @@ public interface ApiInterface {
 
     @FormUrlEncoded
     @POST("job_post.php")
-    Call<List<Model_Jobpost>> job_post(@Field("mobile") String mobile,
+    Call<Model_Jobpost> job_post(@Field("mobile") String mobile,
                                            @Field("description") String description ,
                                            @Field("category") String category,
                                            @Field("sub_category") String sub_category ,
                                            @Field("image") String image,
                                            @Field("price") String price,
                                            @Field("location") String location);
+
+    @GET("get_job_list.php")
+    Call<List<Model_Jobpost>> get_job_list();
 
     Call<ModelUser> user_registration(String user_mobile, String user_name, String password);
 

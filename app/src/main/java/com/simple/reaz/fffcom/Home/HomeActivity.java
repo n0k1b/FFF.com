@@ -23,17 +23,21 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.simple.reaz.fffcom.API.ApiClient;
 import com.simple.reaz.fffcom.API.ApiInterface;
 import com.simple.reaz.fffcom.Helper.InternetConnection;
 import com.simple.reaz.fffcom.JobPost.JobPost;
+import com.simple.reaz.fffcom.JobPost.Model_Jobpost;
 import com.simple.reaz.fffcom.OnboardingScreen.PreferenceManager;
 import com.simple.reaz.fffcom.OnboardingScreen.WelcomeActivity;
 import com.simple.reaz.fffcom.R;
+import com.simple.reaz.fffcom.SeeAll;
 import com.takusemba.multisnaprecyclerview.MultiSnapRecyclerView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,6 +48,7 @@ import retrofit2.Response;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     List<ModelCategories> cat_list = new ArrayList<>();
+    List<Model_Jobpost> job_list = new ArrayList<>();
     RecyclerView firstRecyclerView, secondRecyclerView,thirdRecyclerView;
     private PreferenceManager prefManager;
     ProgressDialog progressDoalog;
@@ -54,6 +59,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private static final int TIME_DELAY = 1500;
     private static long back_pressed;
     private  String mobile;
+
+    private TextView see_category,see_available,see_popular;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +89,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         thirdRecyclerView = findViewById(R.id.third_recycler_view);
         swipeRefreshLayout = findViewById(R.id.swipeRefresh);
 
+        see_available=findViewById(R.id.see_available);
+        see_category=findViewById(R.id.see_category);
+        see_popular=findViewById(R.id.see_popular);
+
         homeLayout = findViewById(R.id.homeLayout);
         net_connLayout = findViewById(R.id.net_layout);
         net_conn = findViewById(R.id.net_conn);
@@ -100,6 +111,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             homeLayout.setVisibility(View.VISIBLE);
             net_connLayout.setVisibility(View.GONE);
             get_cata_list();
+            get_job_list();
         }
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -114,6 +126,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                     net_connLayout.setVisibility(View.GONE);
                     swipeRefreshLayout.setRefreshing(false);
                     get_cata_list();
+                    get_job_list();
 
                 }
 
@@ -131,11 +144,25 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                     homeLayout.setVisibility(View.VISIBLE);
                     net_connLayout.setVisibility(View.GONE);
                     get_cata_list();
+                    get_job_list();
                 }
             }
         });
 
         changeStatusBarColor();
+
+
+        see_category.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(HomeActivity.this, SeeAll.class);
+                intent.putExtra("category", (Serializable) cat_list);
+                startActivity(intent);
+            }
+        });
+
+
+
 
     }
 
@@ -225,6 +252,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
+
+
     public void get_cata_list() {
         progressDoalog = new ProgressDialog(HomeActivity.this);
         progressDoalog.setMessage("Loading...");
@@ -244,11 +273,38 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                     secondRecyclerView.setLayoutManager(new LinearLayoutManager(HomeActivity.this, LinearLayoutManager.HORIZONTAL, false));
                     secondRecyclerView.setAdapter(new HomeAdapter2(HomeActivity.this, cat_list));
                 }
-                progressDoalog.dismiss();
+
             }
 
             @Override
             public void onFailure(Call<List<ModelCategories>> call, Throwable t) {
+                Toast.makeText(HomeActivity.this, "Please check your internet connection", Toast.LENGTH_LONG).show();
+            }
+        });
+
+    }
+
+    public void get_job_list() {
+        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        Call<List<Model_Jobpost>> call = apiInterface.get_job_list();
+        call.enqueue(new Callback<List<Model_Jobpost>>() {
+            @Override
+            public void onResponse(Call<List<Model_Jobpost>> call, Response<List<Model_Jobpost>> response) {
+                job_list = response.body();
+                if (job_list != null) {
+                    // Toast.makeText(HomeActivity.this, "ok", Toast.LENGTH_SHORT).show();
+
+                    thirdRecyclerView.setLayoutManager(new LinearLayoutManager(HomeActivity.this, LinearLayoutManager.HORIZONTAL, false));
+                    thirdRecyclerView.setNestedScrollingEnabled(false);
+                    thirdRecyclerView.setAdapter(new HomeAdapter3(HomeActivity.this, job_list));
+
+                }
+                progressDoalog.dismiss();
+            }
+
+            @Override
+            public void onFailure(Call<List<Model_Jobpost>> call, Throwable t) {
+                progressDoalog.dismiss();
                 Toast.makeText(HomeActivity.this, "Please check your internet connection", Toast.LENGTH_LONG).show();
             }
         });

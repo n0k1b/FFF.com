@@ -17,6 +17,34 @@ public class Model_Jobpost {
     private String image;
     @SerializedName("price")
     private String price;
+    @SerializedName("location")
+    private String location;
+    @SerializedName("response")
+    String response;
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getSub_category() {
+        return sub_category;
+    }
+
+    public void setSub_category(String sub_category) {
+        this.sub_category = sub_category;
+    }
+
+    public String getResponse() {
+        return response;
+    }
+
+    public void setResponse(String response) {
+        this.response = response;
+    }
 
     public Model_Jobpost(String id, String mobile, String description, String cat, String sub_cat, String image, String price) {
         this.id = id;
@@ -26,6 +54,15 @@ public class Model_Jobpost {
         this.sub_category = sub_cat;
         this.image = image;
         this.price = price;
+        this.location = location;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public String getMobile() {
@@ -50,22 +87,6 @@ public class Model_Jobpost {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getCat() {
-        return category;
-    }
-
-    public void setCat(String cat) {
-        this.category = cat;
-    }
-
-    public String getSub_cat() {
-        return sub_category;
-    }
-
-    public void setSub_cat(String sub_cat) {
-        this.sub_category = sub_cat;
     }
 
     public String getImage() {

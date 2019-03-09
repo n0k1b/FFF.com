@@ -6,6 +6,7 @@ import android.os.Parcelable;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -13,7 +14,7 @@ import java.util.List;
 /**
  * Created by Mir Reaz Uddin on 12-Jan-19.
  */
-public class ModelCategories  {
+public class ModelCategories implements Serializable {
     @SerializedName("id")
     private String id;
     @SerializedName("cat_image")

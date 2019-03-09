@@ -61,10 +61,11 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/see_category"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginRight="17dp"
                     android:text="SEE ALL"
                     android:textColor="#f958dc10"
                     android:textSize="13sp"
@@ -99,6 +100,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/see_popular"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -132,12 +134,13 @@
                     android:layout_alignParentTop="true"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="0dp"
-                    android:text=" Available job"
+                    android:text="@string/Available_job"
                     android:textColor="#2b2e2b"
                     android:textSize="13sp"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/see_available"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
