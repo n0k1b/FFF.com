@@ -55,7 +55,6 @@ public class SeeAllAdapter extends RecyclerView.Adapter{
             public void onClick(View v) {
                 Intent intent=new Intent(context,Test.class);
                 context.startActivity(intent);
-
             }
         });
     }
