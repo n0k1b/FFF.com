@@ -30,7 +30,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SeeAll"></activity>
+        <activity android:name=".Gig.GigActivity"></activity>
+        <activity android:name=".SeeAll.SeeAll" />
         <activity
             android:name=".OnboardingScreen.WelcomeActivity"
             android:screenOrientation="portrait" />
@@ -81,7 +82,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Registration.Registration"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
 
         <receiver android:name=".Registration.MySMSBroadCastReceiver">
             <intent-filter android:priority="999">
@@ -91,7 +92,7 @@
 
         <activity
             android:name=".JobPost.JobPost"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
