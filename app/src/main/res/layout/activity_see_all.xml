@@ -6,8 +6,25 @@
     android:layout_height="match_parent"
     android:padding="8dp"
     tools:context=".SeeAll.SeeAll">
-<android.support.v7.widget.RecyclerView
 
+    <HorizontalScrollView
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:scrollbars="none">
+
+        <ImageView
+            android:id="@+id/panaroma"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg" />
+    </HorizontalScrollView>
+<android.support.v7.widget.RecyclerView
+    android:layout_marginTop="5dp"
+    android:layout_below="@+id/top"
     android:id="@+id/seeAllRecycleView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">

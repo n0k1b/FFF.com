@@ -47,7 +47,7 @@ import retrofit2.Response;
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     List<ModelCategories> cat_list = new ArrayList<>();
     List<Model_Jobpost> job_list = new ArrayList<>();
-    RecyclerView firstRecyclerView, secondRecyclerView,thirdRecyclerView;
+    RecyclerView firstRecyclerView, secondRecyclerView, thirdRecyclerView;
     private PreferenceManager prefManager;
     ProgressDialog progressDoalog;
     SwipeRefreshLayout swipeRefreshLayout;
@@ -56,9 +56,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     CardView net_conn;
     private static final int TIME_DELAY = 1500;
     private static long back_pressed;
-    private  String mobile;
-
-    private TextView see_category,see_available,see_popular;
+    private String mobile;
+    private TextView see_category, see_available, see_popular;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,15 +86,14 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         thirdRecyclerView = findViewById(R.id.third_recycler_view);
         swipeRefreshLayout = findViewById(R.id.swipeRefresh);
 
-        see_available=findViewById(R.id.see_available);
-        see_category=findViewById(R.id.see_category);
-        see_popular=findViewById(R.id.see_popular);
+        see_available = findViewById(R.id.see_available);
+        see_category = findViewById(R.id.see_category);
+        see_popular = findViewById(R.id.see_popular);
 
         homeLayout = findViewById(R.id.homeLayout);
         net_connLayout = findViewById(R.id.net_layout);
         net_conn = findViewById(R.id.net_conn);
-
-        mobile=getIntent().getStringExtra("mobile");
+        mobile = getIntent().getStringExtra("mobile");
 
         //------Internet connection checking.....
         final InternetConnection internetConnection = new InternetConnection(getApplicationContext());
@@ -153,7 +151,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         see_category.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(HomeActivity.this, SeeAll.class);
+                Intent intent = new Intent(HomeActivity.this, SeeAll.class);
                 intent.putExtra("category", (Serializable) cat_list);
                 startActivity(intent);
             }
@@ -161,21 +159,19 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         see_popular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(HomeActivity.this, SeeAll.class);
+                Intent intent = new Intent(HomeActivity.this, SeeAll.class);
                 intent.putExtra("category", (Serializable) cat_list);
                 startActivity(intent);
             }
         });
-//        see_available.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent=new Intent(HomeActivity.this, SeeAll.class);
-//                intent.putExtra("category", (Serializable) job_list);
-//                startActivity(intent);
-//            }
-//        });
-
-
+        see_available.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, SeeAll.class);
+                intent.putExtra("job_list", (Serializable) job_list);
+                startActivity(intent);
+            }
+        });
 
 
     }
@@ -218,8 +214,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         if (id == R.id.action_settings) {
             return true;
         } else if (id == R.id.job_post) {
-            Intent intent=new Intent(HomeActivity.this,JobPost.class);
-            intent.putExtra("mobile",mobile);
+            Intent intent = new Intent(HomeActivity.this, JobPost.class);
+            intent.putExtra("mobile", mobile);
             startActivity(intent);
         }
 
@@ -238,7 +234,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
         } else if (id == R.id.jobpost) {
             Intent intent = new Intent(HomeActivity.this, JobPost.class);
-            intent.putExtra("mobile",mobile);
+            intent.putExtra("mobile", mobile);
             startActivity(intent);
 
         } else if (id == R.id.nav_manage) {
@@ -265,7 +261,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             window.setStatusBarColor(Color.TRANSPARENT);
         }
     }
-
 
 
     public void get_cata_list() {

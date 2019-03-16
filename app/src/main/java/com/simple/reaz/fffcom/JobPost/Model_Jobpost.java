@@ -2,7 +2,9 @@ package com.simple.reaz.fffcom.JobPost;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Model_Jobpost {
+import java.io.Serializable;
+
+public class Model_Jobpost implements Serializable {
     @SerializedName("id")
     private String id;
     @SerializedName("mobile")
